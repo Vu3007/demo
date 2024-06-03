@@ -23,11 +23,8 @@ public class Actor {
     @Column(nullable = false)
     String name;
     String slug;
-    @Column(columnDefinition = "TEXT")
     String avatar;
     String bio;
-
-    @Enumerated(EnumType.STRING)
 
     LocalDateTime createdAt;
     LocalDateTime updatedAt;

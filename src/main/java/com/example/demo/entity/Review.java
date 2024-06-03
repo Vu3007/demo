@@ -24,10 +24,8 @@ public class Review {
     String name;
     String content;
 
-    @Column(columnDefinition = "TEXT")
     Double rating;
 
-    @Enumerated(EnumType.STRING)
 
     LocalDateTime createdAt;
     LocalDateTime updatedAt;

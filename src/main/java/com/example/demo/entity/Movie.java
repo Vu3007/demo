@@ -1,5 +1,4 @@
 package com.example.demo.entity;
-
 import com.example.demo.model.enums.MovieType;
 import jakarta.persistence.*;
 import lombok.*;

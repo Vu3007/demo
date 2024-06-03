@@ -10,8 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDateTime;
 
+import java.time.LocalDateTime;
 
 @SpringBootTest
 class DemoAppApplicationTests {
@@ -26,7 +26,6 @@ class DemoAppApplicationTests {
 	private HistoryRepository historyRepository;
 	private ReviewRepository reviewRepository;
 	private UserRepository userRepository;
-
 
 	@Test
 	void save_movies() {
@@ -44,14 +43,13 @@ class DemoAppApplicationTests {
 					.releaseYear(faker.number().numberBetween(2021, 2024))
 					.rating(faker.number().randomDouble(1, 1, 10))
 					.trailerUrl("https://www.youtube.com/embed/YPY7J-flzE8?si=NIAaDGXL68JdDCux")
-					.type(MovieType.values()[faker.number().numberBetween(0, MovieType.values().length - 1)])
+					.type(MovieType.values()[faker.number().numberBetween(0, MovieType.values().length)])
 					.status(status)
 					.createdAt(LocalDateTime.now())
 					.updatedAt(LocalDateTime.now())
 					.publishedAt(status ? LocalDateTime.now() : null)
 					.build();
 			movieRepository.save(movie);
-
 		}
 	}
 	@Test
@@ -66,7 +64,7 @@ class DemoAppApplicationTests {
 					.name(name)
 					.slug(slugify.slugify(name))
 					.avatar("https://placehold.co/600x400?text=")
-					.bio("status")
+					.bio(faker.lorem().paragraph())
 					.createdAt(LocalDateTime.now())
 					.updatedAt(LocalDateTime.now())
 					.build();
@@ -78,7 +76,7 @@ class DemoAppApplicationTests {
 		Faker faker = new Faker();
 		Slugify slugify = Slugify.builder().build();
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 20; i++) {
 			String name = faker.book().title();
 			Boolean status = faker.bool().bool();
 			Country country = Country.builder()
@@ -95,14 +93,14 @@ class DemoAppApplicationTests {
 		Faker faker = new Faker();
 		Slugify slugify = Slugify.builder().build();
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 30; i++) {
 			String name = faker.book().title();
 			Boolean status = faker.bool().bool();
 			Director director = Director.builder()
 					.name(name)
 					.slug(slugify.slugify(name))
 					.avatar("https://placehold.co/600x400?text=")
-					.bio("status")
+					.bio(faker.lorem().paragraph())
 					.createdAt(LocalDateTime.now())
 					.updatedAt(LocalDateTime.now())
 					.build();
@@ -131,27 +129,11 @@ class DemoAppApplicationTests {
 
 	}
 	@Test
-	void save_favorite(){
-		Faker faker = new Faker();
-		Slugify slugify = Slugify.builder().build();
-
-		for (int i = 0; i < 100; i++) {
-			String name = faker.book().title();
-			Boolean status = faker.bool().bool();
-			Favorite favorite = Favorite.builder()
-					.createdAt(LocalDateTime.now())
-					.updatedAt(LocalDateTime.now())
-					.build();
-			favoriteRepository.save(favorite);
-		}
-
-	}
-	@Test
 	void save_genre(){
 		Faker faker = new Faker();
 		Slugify slugify = Slugify.builder().build();
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 20; i++) {
 			String name = faker.book().title();
 			Boolean status = faker.bool().bool();
 			Genre genre = Genre.builder()
@@ -206,7 +188,7 @@ class DemoAppApplicationTests {
 		Faker faker = new Faker();
 		Slugify slugify = Slugify.builder().build();
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 30; i++) {
 			String name = faker.book().title();
 			Boolean status = faker.bool().bool();
 			User user = User.builder()
@@ -222,9 +204,9 @@ class DemoAppApplicationTests {
 		}
 
 	}
-//
-
-
 }
+
+
+
 
 

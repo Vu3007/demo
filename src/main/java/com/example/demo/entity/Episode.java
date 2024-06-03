@@ -23,11 +23,9 @@ public class Episode {
 
     String name;
     int duration;
-    @Column(columnDefinition = "TEXT")
     int  displayOrder;
     String videoUrl;
 
-    @Enumerated(EnumType.STRING)
     boolean status;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;

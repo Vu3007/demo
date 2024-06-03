@@ -20,10 +20,8 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
-    @Column(nullable = false)
     String name;
     String slug;
-    @Enumerated(EnumType.STRING)
 
     LocalDateTime createdAt;
     LocalDateTime updatedAt;

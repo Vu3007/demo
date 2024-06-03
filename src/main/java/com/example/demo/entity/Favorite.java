@@ -22,8 +22,6 @@ public class Favorite {
     Integer id;
 
 
-    @Enumerated(EnumType.STRING)
-
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
 }

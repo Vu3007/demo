@@ -22,13 +22,14 @@ public class User {
     Integer id;
 
     @Column(nullable = false)
+    String email;
     String name;
-    @Column(columnDefinition = "TEXT")
     String password;
     String avatar;
 
     @Enumerated(EnumType.STRING)
     UserRole role;
+
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
 }

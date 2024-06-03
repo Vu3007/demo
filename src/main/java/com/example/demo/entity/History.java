@@ -22,8 +22,6 @@ public class History {
     Double duration;
 
 
-    @Enumerated(EnumType.STRING)
-
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
 }
